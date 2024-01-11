@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<div class="flex items-center justify-center h-screen">
+    <div class="bg-red-500 p-8 rounded-lg shadow-md">
+        <h1 id="counters" class="text-5xl font-bold text-white text-center mb-4">0</h1>
+        <div class="flex justify-center">
+            <button id="btn-1" class="bg-green-400 text-white w-32 h-12 mr-4 focus:outline-none">Increment</button>
+            <button id="btn-2" class="bg-red-400 text-white w-32 h-12 focus:outline-none">Decrement</button>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById("btn-1").addEventListener("click", function(){
+        const counter = document.getElementById("counters");
+        const counterValue1 = parseInt(counter.innerText);
+        counter.innerText = counterValue1 + 1;
+       
+       
+    })
+
+    document.getElementById("btn-2").addEventListener("click", function(){
+        const counter = document.getElementById("counters")
+        const counterValue2 = parseInt(counter.innerText);
+        counter.innerText = counterValue2 - 1;
+    })
+
+</script>
+
+</body>
+</html>
