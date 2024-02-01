@@ -1,3 +1,5 @@
+// import Blogs from "./component/Blogs/Blogs";
+
 import Blogs from "./component/Blogs/Blogs";
 
 

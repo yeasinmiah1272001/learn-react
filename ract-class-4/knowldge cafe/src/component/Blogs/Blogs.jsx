@@ -5,6 +5,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [bookmarks, setBookmarks] = useState([]);
   const [remainingTime, setRemainingTime] = useState(0);
+  const [stillTime, setStillTime] = useState(20)
 
   useEffect(() => {
     fetch("kk.json")
@@ -21,6 +22,19 @@ const Blogs = () => {
     const newTime = remainingTime + time;
     console.log(newTime)
     setRemainingTime(newTime);
+
+    const MulTime =  stillTime - newTime
+      setStillTime(MulTime);
+      
+      //  if(MulTime > 0){
+      
+       
+        
+      //  }
+       
+      //  
+
+
   };
 
   return (
@@ -62,6 +76,9 @@ const Blogs = () => {
         </div>
         {/* right side */}
         <div className="bg-gray-300 p-12 w-96">
+          <h1 className="text-center text-2xl">
+            Credit Hour Remaining : {stillTime}
+          </h1>
           <h1 className="text-center text-2xl">
             Remaining Time : {remainingTime}
           </h1>
