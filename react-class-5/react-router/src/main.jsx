@@ -7,7 +7,6 @@ import Root from './Root/Root';
 import Products from './Component/Products/Products';
 import Home from './Component/Home/Home';
 import Cards from './Component/Cards/Cards';
-import DeshBoard from './Component/DeshBoard/DeshBoard';
 
   const router = createBrowserRouter([
     {
@@ -30,10 +29,7 @@ import DeshBoard from './Component/DeshBoard/DeshBoard';
           path: "/",
           element: <Home></Home>,
         },
-        {
-          path: "/desh/:id",
-          element: <DeshBoard></DeshBoard>,
-        },
+       
       ],
     },
   ]);

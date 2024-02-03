@@ -1,15 +1,20 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Cards = () => {
        const cards = useLoaderData();
        console.log(cards)
          const { images, rating, price, title, thumbnail, id } = cards;
+         const handleAddToCart = () =>{
+          toast("Product succesfully added")
+         }
 
        return (
          <div>
-          
            <div className="w-full h-96 items-center justify-center mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
              <a href="#">
                <img
@@ -57,15 +62,16 @@ const Cards = () => {
                    ${price}
                  </span>
                  <Link
-                   to={`/desh/${id}`}
+                   onClick={handleAddToCart}
                    href="#"
                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                  >
-                   Buy Now
+                   Add Cart
                  </Link>
                </div>
              </div>
            </div>
+           <ToastContainer />
          </div>
        );
 };
