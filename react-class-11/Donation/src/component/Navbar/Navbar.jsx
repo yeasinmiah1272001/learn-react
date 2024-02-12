@@ -1,7 +1,28 @@
 
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/Logo.png"
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 const Navbar = () => {
+
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () =>{
+    logOut()
+
+    .then(result =>{
+      console.log(result.user)
+     
+    })
+    .then(error => {
+      console.error(error)
+    })
+
+
+  }
+
+
+
   return (
     <nav className="bg-slate-100 p-4 flex justify-between items-center">
       {/* Logo on the left */}
@@ -20,23 +41,49 @@ const Navbar = () => {
           Home
         </NavLink>
 
-        <NavLink
-          to="/donation"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-red-500 underline" : ""
-          }
-        >
-          Donation
-        </NavLink>
+        {user && (
+          <>
+            <NavLink
+              to="/donation"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-red-500 underline" : ""
+              }
+            >
+              Donation
+            </NavLink>
+          </>
+        )}
 
         <NavLink
-          to="/ Statistics"
+          to="/Statistics"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-red-500 underline" : ""
           }
         >
           Statistics
         </NavLink>
+        {user ? (
+          <>
+            <span>{user.email}</span>
+            <NavLink
+              onClick={handleLogOut}
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-red-500 underline" : ""
+              }
+            >
+              LogOut
+            </NavLink>
+          </>
+        ) : (
+          <NavLink
+            to="/login"
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-red-500 underline" : ""
+            }
+          >
+            Login
+          </NavLink>
+        )}
       </div>
     </nav>
   );
