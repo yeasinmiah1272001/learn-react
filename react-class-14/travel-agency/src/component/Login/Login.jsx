@@ -1,43 +1,43 @@
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../firebase/Provider/AuthProvider";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../Provider/AuthProvider";
 
-const Register = () => {
-  const { createUser, googleLogin } = useContext(AuthContext);
-  const location = useLocation();
+const Login = () => {
+  const [errorPass, setErrorPass] = useState("")
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [errorPassword, setErrorPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    // Password validation
-    if (password.length < 8) {
-      setErrorPassword("Password must be at least 8 characters long.");
+    if(password.length < 6){
+      setErrorPass("password must be 6 charecter")
       return;
-    } else {
-      setErrorPassword("");
+
+    }
+    else{
+      setErrorPass("")
     }
 
-    createUser(email, password)
-    // googleLogin()
+    login(email, password)
       .then((result) => {
         console.log(result.user);
-        toast.success("Registration successful!");
-        navigate(location?.state ? location.state : "/");
+        toast.success("login successful!");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
-        toast.error("Registration failed. Please try again.");
+        toast.error("login failed. Please try again.");
       });
   };
 
   return (
-    <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto ">
+    <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto items-center justify-center">
       <form onSubmit={handleSubmit} className="space-y-6" action="#">
         <h5 className="text-xl font-medium text-gray-900 dark:text-white">
           Sign in to our platform
@@ -55,6 +55,7 @@ const Register = () => {
             id="email"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
             placeholder="name@company.com"
+            required
           />
         </div>
         <div>
@@ -70,14 +71,40 @@ const Register = () => {
             id="password"
             placeholder="••••••••"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            required
           />
-          {errorPassword && <p className="text-red-500 text-sm">{errorPassword}</p>}
+          {errorPass && <span>{errorPass}</span>}
+        </div>
+        <div className="flex items-start">
+          <div className="flex items-start">
+            <div className="flex items-center h-5">
+              <input
+                id="remember"
+                type="checkbox"
+                value=""
+                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                required
+              />
+            </div>
+            <label
+              htmlFor="remember"
+              className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >
+              Remember me
+            </label>
+          </div>
+          <a
+            href="#"
+            className="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
+          >
+            Lost Password?
+          </a>
         </div>
         <button
           type="submit"
           className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          Register to your account
+          Login to your account
         </button>
         <button
           type="submit"
@@ -86,18 +113,18 @@ const Register = () => {
           Google Login
         </button>
         <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-          Already have an account please{" "}
+          Not registered?{" "}
           <Link
-            to="/login"
+            to="/registration"
             className="text-blue-700 hover:underline dark:text-blue-500"
           >
-            Login
+            Create account
           </Link>
         </div>
       </form>
-      <ToastContainer />
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
 
-export default Register;
+export default Login;

@@ -1,25 +1,15 @@
-import { NavLink } from "react-router-dom";
-import logo from "../../assets/Images/About/logo.png";
 import { useContext } from "react";
-import { AuthContext } from "../firebase/Provider/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
+import { NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+
+import logo from "../../assets/images/logo/logo.png"
+
 
 const Navbar = () => {
-  const {user, logOut} = useContext(AuthContext)
-
-  const handleLogOut = () =>{
-    logOut()
-      .then((result) => {
-        console.log(result.user);
-        toast.success("Registration successful!");
-      })
-      .catch((error) => {
-        console.log(error);
-        toast.error("Registration failed. Please try again.");
-      });
-  }
-
-
+       const { user, logOut } = useContext(AuthContext)
+       const handleLogOut = () =>{
+              logOut()
+       }
 
   const Links = (
     <>
@@ -29,20 +19,25 @@ const Navbar = () => {
       <li>
         <NavLink to="/about">About</NavLink>
       </li>
-      {user && (
-        <li>
-          <NavLink to="/service">Service</NavLink>
-        </li>
-      )}
 
       <li>
-        <NavLink to="/appointment">Appointment</NavLink>
+        <NavLink to="/service">Service</NavLink>
+      </li>
+
+      <li>
+        <NavLink to="/blog">Blog</NavLink>
+      </li>
+      <li>
+        <NavLink to="/pricing">Pricing</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact">Contact</NavLink>
       </li>
     </>
   );
 
   return (
-    <div className="navbar bg-white  fixed z-10">
+    <div className="navbar bg-white  fixed z-10 shadow-lg">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -71,12 +66,13 @@ const Navbar = () => {
             </a>
           </ul>
         </div>
-        <h1 className="  normal-case md:text-xl">
+        <h1 className="  normal-case">
           <img className="small:w-40 lg: w-44" src={logo} alt="" />
+         
         </h1>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-semibold text-xl">
+        <ul className="menu menu-horizontal px-1 ">
           {Links}
         </ul>
       </div>
@@ -84,24 +80,21 @@ const Navbar = () => {
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">{/* <img src={navPic} /> */}</div>
         </label>
-        <>
-          {user ? (
-            <>
-              {" "}
-              <NavLink>
-                <button onClick={handleLogOut} className="btn">
-                  LogOut
-                </button>
-              </NavLink>
-            </>
-          ) : (
-            <NavLink to="/login">
-              <button className="btn">Login</button>
+        {user ? (
+          <>
+            <span>{user.email}</span>
+            <NavLink>
+              <button onClick={handleLogOut} className="btn">
+                LogOut
+              </button>
             </NavLink>
-          )}
-        </>
+          </>
+        ) : (
+          <NavLink to="/login">
+            <button className="btn">Login</button>
+          </NavLink>
+        )}
       </div>
-      <ToastContainer autoClose={800} />
     </div>
   );
 };

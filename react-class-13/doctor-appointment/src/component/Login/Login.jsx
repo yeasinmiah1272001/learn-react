@@ -1,5 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import { AuthContext } from "../firebase/Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,21 +7,33 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 const Login = () => {
+  const [errorPassword, setErrorPassword] = useState("")
 
 
-  const { login } = useContext(AuthContext);
+  const { login, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate()
+  const location = useLocation()
+  console.log("login location",location)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    if(password.length < 8 ){
+      setErrorPassword("Password must be at least 8 characters long.")
+      return;
+    }
+    else{
+      setErrorPassword("")
+    }
+
     login(email, password)
+    // googleLogin()
       .then((result) => {
         console.log(result.user);
         toast.success("login successful!");
-        navigate("/")
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error);
@@ -50,7 +62,7 @@ const Login = () => {
                  id="email"
                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                  placeholder="name@company.com"
-                 required
+             
                />
              </div>
              <div>
@@ -66,8 +78,11 @@ const Login = () => {
                  id="password"
                  placeholder="••••••••"
                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                 required
+                 
                />
+               {
+                errorPassword && <p className="text-red-500 text-sm">{errorPassword}</p>
+               }
              </div>
              <div className="flex items-start">
                <div className="flex items-start">

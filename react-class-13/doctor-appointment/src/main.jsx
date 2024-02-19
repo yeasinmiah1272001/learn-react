@@ -45,7 +45,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/appoint/:id",
-        element: <DoctorsDetails></DoctorsDetails>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <DoctorsDetails></DoctorsDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("/doctors.json"),
       },
       {

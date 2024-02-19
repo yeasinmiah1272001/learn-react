@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "cover": "https://i.ibb.co/jGVr756/h1.png",
+    "name": "Family House",
+    "total": "122 Property"
+  },
+  {
+    "id": 2,
+    "cover": "https://i.ibb.co/PMh1zZm/h2.png",
+    "name": "House & Villa",
+    "total": "155 Property"
+  },
+  {
+    "id": 3,
+    "cover": "https://i.ibb.co/0DZdLYg/h3.png",
+    "name": "Apartment",
+    "total": "300 Property"
+  },
+  {
+    "id": 4,
+    "cover": "https://i.ibb.co/X3Jcb9z/h4.png",
+    "name": "Office & Studio",
+    "total": "80 Property"
+  },
+  {
+    "id": 5,
+    "cover": "https://i.ibb.co/RDknj99/h6.png",
+    "name": "Villa & Condo",
+    "total": "80 Property"
+  }
+]

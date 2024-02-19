@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "icon": "<i class='fa-solid fa-trophy'></i>",
+    "num": "32 M",
+    "name": "Blue Burmin Award"
+  },
+  {
+    "id": 2,
+    "icon": "<i class='fa-solid fa-briefcase'></i>",
+    "num": "43 M",
+    "name": "Mimo X11 Award"
+  },
+  {
+    "id": 3,
+    "icon": "<i class='fa-solid fa-lightbulb'></i>",
+    "num": "51 M",
+    "name": "Australian UGC Award"
+  },
+  {
+    "id": 4,
+    "icon": "<i class='fa-solid fa-heart'></i>",
+    "num": "42 M",
+    "name": "IITCA Green Award"
+  }
+]

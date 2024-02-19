@@ -1,34 +1,22 @@
-import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../firebase/Provider/AuthProvider";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../Provider/AuthProvider";
 
-const Register = () => {
-  const { createUser, googleLogin } = useContext(AuthContext);
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [errorPassword, setErrorPassword] = useState("");
+const Registration = () => {
+  const { createUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    // Password validation
-    if (password.length < 8) {
-      setErrorPassword("Password must be at least 8 characters long.");
-      return;
-    } else {
-      setErrorPassword("");
-    }
-
     createUser(email, password)
-    // googleLogin()
       .then((result) => {
         console.log(result.user);
         toast.success("Registration successful!");
-        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error);
@@ -55,6 +43,7 @@ const Register = () => {
             id="email"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
             placeholder="name@company.com"
+            required
           />
         </div>
         <div>
@@ -70,8 +59,8 @@ const Register = () => {
             id="password"
             placeholder="••••••••"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            required
           />
-          {errorPassword && <p className="text-red-500 text-sm">{errorPassword}</p>}
         </div>
         <button
           type="submit"
@@ -100,4 +89,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Registration;

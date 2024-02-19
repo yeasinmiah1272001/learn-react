@@ -1,0 +1,44 @@
+[
+  {
+    "list": "50",
+    "cover": "https://i.ibb.co/vvSBNcT/team-5.jpg",
+    "address": "Liverpool, Canada",
+    "name": "Sargam S. Singh"
+   
+  },
+  {
+    "list": "70",
+    "cover": "https://i.ibb.co/cxFCRK4/team-4.jpg",
+    "address": "Montreal, Canada",
+    "name": "Harijeet M. Siller"
+   
+  },
+  {
+    "list": "80",
+    "cover": "https://i.ibb.co/xzbZG0W/team-3.jpg",
+    "address": "Denever, USA",
+    "name": "Anna K. Young"
+   
+  },
+  {
+    "list": "51",
+    "cover": "https://i.ibb.co/8mxzbgx/team-2.jpg",
+    "address": "2272 Briarwood Drive",
+    "name": "Michael P. Grimaldo"
+   
+  },
+  {
+    "list": "42",
+    "cover": "https://i.ibb.co/xzbZG0W/team-3.jpg",
+    "address": "2272 Briarwood Drive",
+    "name": "Michael P. Grimaldo"
+    
+  },
+  {
+    "list": "38",
+    "cover": "https://i.ibb.co/fdV6ssM/team-1.jpg",
+    "address": "Montreal, USA",
+    "name": "Adam K. Jollio"
+   
+  }
+]
