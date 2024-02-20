@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -9,6 +9,7 @@ const Login = () => {
   const [errorPass, setErrorPass] = useState("")
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +29,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         toast.success("login successful!");
-        navigate("/");
+       navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error);

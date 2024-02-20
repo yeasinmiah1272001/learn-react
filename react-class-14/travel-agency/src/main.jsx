@@ -15,6 +15,9 @@ import PropertyLists from "./component/PropertyLists/PropertyLists";
 import Feature from "./component/Feature/Feature";
 import Contact from "./component/Contact/Contact";
 import PrivateRoute from "./component/PrivateRoute/PrivateRoute";
+import Details from "./component/PropertyLists/Details";
+import Pricing from "./component/PropertyLists/Pricing";
+import LocationDetails from "./component/Locations/LocationDetails";
 
 
 
@@ -39,7 +42,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <PropertyLists></PropertyLists>,
+        element: (
+          <PrivateRoute>
+            <PropertyLists></PropertyLists>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/about",
@@ -48,6 +55,25 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/details/:id",
+        element: <Details></Details>,
+        loader: () => fetch("/list.json"),
+      },
+      {
+        path: "/pricing",
+        element: (
+          <PrivateRoute>
+            <Pricing></Pricing>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/list.json"),
+      },
+      {
+        path:"/locations/:id",
+        element:<LocationDetails></LocationDetails>,
+        loader:() => fetch("/location.json")
       },
 
       {
