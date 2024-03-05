@@ -1,0 +1,43 @@
+[
+  {
+ 
+    "name": "Apple",
+    "img": "https://i.ibb.co/2kHcCym/apple-logo-10-1024x1024.png",
+    "id": "1",
+    "category": "Technology"
+  },
+  {
+
+    "name": "Rolex",
+    "img": "https://i.ibb.co/TtrxV7Y/rolex-logo-png-transparent.png",
+    "id": "3",
+    "category": "Fashion"
+  },
+  {
+
+    "name": "Sony",
+    "img": "https://i.ibb.co/3cnWRtw/Sony-logo.jpg",
+    "id": "aei",
+    "category": "Technology"
+  },
+  {
+
+    "name": "Walton",
+    "img": "https://i.ibb.co/bg8FHjB/walton.png",
+    "id": "6",
+    "category": "Technology"
+  },
+  {
+
+    "name": "HP",
+    "img": "https://i.ibb.co/wBggbjF/hp.png",
+    "id": "2",
+    "category": "Technology"
+  },
+  {
+    "name": "Samsung",
+    "img": "https://i.ibb.co/RTfK3S3/samsung-logo-preview.png",
+    "id": "4",
+    "category": "Technology"
+  }
+]

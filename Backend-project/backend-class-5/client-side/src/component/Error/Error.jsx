@@ -1,11 +1,10 @@
 
-
+import banner3 from "../../Image/404/404.gif";
 const Error = () => {
        return (
-              <div>
-                     <h1 className="text-3xl text-red-500 font-bold my-20">This is Error Page</h1>
-                     
-              </div>
+         <div>
+           <img className="mx-auto" src={banner3} alt="" />
+         </div>
        );
 };
 

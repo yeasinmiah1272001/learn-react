@@ -6,6 +6,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Root/Root";
 import Error from "./component/Error/Error";
 import Home from "./component/Home/Home";
+import AddToCart from "./component/AddToCart/AddToCart";
+import AppliedCart from "./AppliedCart/AppliedCart";
+import Details from "./AppliedCart/Details/Details";
+import Update from "./component/Update/Update";
 
 
 
@@ -13,13 +17,34 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement:<Error></Error>,
-    children:[
+    errorElement: <Error></Error>,
+    children: [
       {
-        path:"/",
-        element:<Home></Home>
-      }
-    ]
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/addtocart",
+        element: <AddToCart></AddToCart>,
+      },
+      {
+        path: "/appliedcart",
+        element: <AppliedCart></AppliedCart>,
+        loader: () => fetch("http://localhost:5000/coffee"),
+      },
+      {
+        path: "/details/:id",
+        element: <Details></Details>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffee/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffee/${params.id}`),
+      },
+    ],
   },
 ]);
 

@@ -17,16 +17,16 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            to="/statist"
+            to="/addtocart"
             className="text-white hover:underline mb-2 sm:mb-0 sm:mx-4 md:mx-4"
           >
-            Statistics
+            Add To Cart
           </Link>
           <Link
-            to="/appliedJob"
+            to="/appliedcart"
             className="text-white hover:underline mb-2 sm:mb-0 sm:mx-4 md:mx-4"
           >
-            Applied Jobs
+            Applied cart
           </Link>
           <Link
             to="/blog"
