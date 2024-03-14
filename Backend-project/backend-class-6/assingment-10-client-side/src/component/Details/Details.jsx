@@ -1,44 +1,48 @@
-import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const Details = () => {
   const details = useLoaderData();
-  console.log(details);
+  const { category } = useParams();
+  console.log(category)
+
+  const filterData = details.filter((data) => data.category == category)
+  console.log(filterData)
 
   return (
-    <div className="mt-7">
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {details.map((item) => (
-          <Link
-            key={item._id}
-            // Adjust the route as per your application
-            className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
-          >
-            <div className="relative overflow-hidden bg-cover bg-no-repeat">
-              <img
-                className="rounded-t-lg h-52 mx-auto"
-                src={item.cover}
-                alt=""
-              />
-            </div>
-            <div className="p-4">
-              <p className="text-lg font-semibold">{item.title}</p>
-              <p className="text-gray-600">Price: ${item.price}</p>
-              <p className="text-gray-600">Rating: {item.rating}</p>
-              <div className="flex justify-between mt-4">
-                <Link to={`/cartDetails/${item._id}`}>
-                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Details
-                  </button>
-                </Link>
-                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                  Update
+    <div className="grid sm:grid-cols-1  lg:grid-cols-2 mt-8 gap-10">
+      {filterData.map((item) => (
+        <div
+          key={item._id}
+          className="flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white md:max-w-xl md:flex-row"
+        >
+          <img
+            className="w-48 rounded-t-lg object-cover md:h-auto md:w-48 md:!rounded-none md:!rounded-s-lg"
+            src={item.cover}
+            alt=""
+          />
+          <div className="flex flex-col justify-start p-6">
+            <h5 className="mb-2 text-xl font-medium">Brand: {item.category}</h5>
+            <h5 className="mb-2 text-sm font-medium">Price: {item.price}</h5>
+            <h5 className="mb-2 text-sm font-medium">Rating: {item.rating}</h5>
+
+            <p className="text-xs text-surface/75 mb-2 dark:text-neutral-300">
+              Last updated 3 mins ago
+            </p>
+
+            <div className="flex mt-auto gap-3">
+              <Link to={`/detailsCart/${item.price}`}>
+                <button
+                  type="button"
+                  className="inline-block rounded bg-neutral-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-50 shadow-dark-3 transition duration-150 ease-in-out hover:bg-neutral-700 hover:shadow-dark-2 focus:bg-neutral-700 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-dark-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong md:w-32 md:pt-3 md:pb-3 lg:w-40 lg:pt-4 lg:pb-4"
+                >
+                  Details
                 </button>
-              </div>
+              </Link>
+             
             </div>
-          </Link>
-        ))}
-      </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -27,18 +27,17 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-   
     await client.connect();
-//     add your collection
- const brandCollection = client.db("brandCollection").collection("brand");
+    //     add your collection
+    const brandCollection = client.db("brandCollection").collection("brand");
+    const brandAddCollection = client
+      .db("brandAddCollection")
+      .collection("add");
 
     await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
     );
-
-
-
 
     app.get("/", (req, res) => {
       res.send("assingment-10 running");
@@ -58,15 +57,77 @@ async function run() {
       console.log(result);
       res.send(result);
     });
-    
+
+    app.get("/added/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = {
+        _id: new ObjectId(id),
+      };
+      const result = await brandAddCollection.findOne(query);
+      console.log(result);
+      res.send(result);
+    });
+
+    app.get("/added", async (req, res) => {
+      const result = await brandAddCollection.find().toArray();
+      res.send(result);
+    });
+
+    app.post("/added", async (req, res) => {
+      const user = req.body;
+      console.log(user);
+      const result = await brandAddCollection.insertOne(user);
+      console.log(result);
+      res.send(result);
+    });
+
+    app.delete("/added/:id", async (req, res) => {
+      const id = req.params.id;
+      console.log("delete", id);
+      const query = {
+        _id: new ObjectId(id),
+      };
+      const result = await brandAddCollection.deleteOne(query);
+      console.log(result);
+      res.send(result);
+    });
+
+    // update
+    app.put("/added/:id", async (req, res) => {
+      const id = req.params.id;
+      const data = req.body;
+      console.log("id", id, data);
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
+      const updatedUSer = {
+        $set: {
+          ProductName:data.ProductName,
+          rating:data.rating,
+          price:data.price,
+          category:data.category,
+          des:data.des,
+          img:data.img
+        },
+      };
+      const result = await brandAddCollection.updateOne(
+        filter,
+        updatedUSer,
+        options
+      );
+      res.send(result);
+    });
+
+    app.post("/added", async (req, res) => {
+      const user = req.body;
+      //   console.log(user);
+      const result = await brandAddCollection.insertOne(user);
+      console.log(result);
+      res.send(result);
+    });
 
     app.listen(port, () => {
       console.log(`Example app listening on port ${port}`);
     });
-
-
-
-
   } finally {
        // await client.close();
   }
