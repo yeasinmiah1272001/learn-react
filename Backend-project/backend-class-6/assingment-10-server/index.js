@@ -10,7 +10,7 @@ app.use(express.json());
 
 // jaVkZyvbhjcHgsQW;
 // assingment10;
-
+console.log(process.env.DB_PASS)
 
 
 const uri =
