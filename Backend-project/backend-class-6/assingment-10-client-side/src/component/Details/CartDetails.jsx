@@ -12,7 +12,7 @@ const CartDetails = () => {
        console.log(findData)
 
         const handleAddToCard = () => {
-          fetch("http://localhost:5000/added", {
+          fetch("https://assingment-10-server-khaki.vercel.app/added", {
             method: "POST",
             headers: {
               "content-type": "application/json",

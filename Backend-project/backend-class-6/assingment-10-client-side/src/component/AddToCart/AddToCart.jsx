@@ -17,7 +17,7 @@ const AddToCart = () => {
               console.log(objInfo)
 
 
-              fetch(`http://localhost:5000/added`, {
+              fetch(`https://assingment-10-server-khaki.vercel.app/added`, {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -25,21 +25,19 @@ const AddToCart = () => {
                 body: JSON.stringify(objInfo),
               })
                 .then((res) => res.json())
-                .then((data) =>{
+                .then((data) => {
+                  if (data.insertedId) {
+                    Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "Your Product added",
+                      showConfirmButton: false,
+                      timer: 1500,
+                    });
+                  }
 
-                      if (data.insertedId) {
-                        Swal.fire({
-                          position: "top-end",
-                          icon: "success",
-                          title: "Your Product added",
-                          showConfirmButton: false,
-                          timer: 1500,
-                        });
-                      }
-
-
-                     console.log(data)
-                })
+                  console.log(data);
+                });
                
        }
   

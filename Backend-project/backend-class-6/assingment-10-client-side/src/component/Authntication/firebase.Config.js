@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBMttZTOJj4tbJ9l8L_P54b4aY9kMtQJfo",
-  authDomain: "brandshop-6930e.firebaseapp.com",
-  projectId: "brandshop-6930e",
-  storageBucket: "brandshop-6930e.appspot.com",
-  messagingSenderId: "193586460384",
-  appId: "1:193586460384:web:bc2d805b77e5f6fd4b8285",
+  apiKey: "AIzaSyD8YyrEgge66ffjWp1HuCgUdg_MymydtLw",
+  authDomain: "car-doctor-practice-9032d.firebaseapp.com",
+  projectId: "car-doctor-practice-9032d",
+  storageBucket: "car-doctor-practice-9032d.appspot.com",
+  messagingSenderId: "398179941935",
+  appId: "1:398179941935:web:c7c9dd7651e8f856b110da",
 };
 
 // Initialize Firebase

@@ -8,7 +8,7 @@ const MyCart = () => {
        console.log(myCart)
 
       const handleDelete = (_id) => {
-        fetch(`http://localhost:5000/added/${_id}`, {
+        fetch(`https://assingment-10-server-khaki.vercel.app/added/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

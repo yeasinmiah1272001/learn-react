@@ -11,11 +11,13 @@ import CartDetails from "./component/Details/CartDetails";
 import Update from "./component/Update/Update";
 import AddToCart from "./component/AddToCart/AddToCart";
 import MyCart from "./component/MyCart/MyCart";
-import Login from "./component/Login/Login";
-import Registration from "./component/Registration/Registration";
 import AuthProvider from "./component/Provider/AuthProvider";
-import PrivateRoute from "./component/PrivateRoute/PrivateRoute";
+
 import Contact from "./component/Contact/Contact";
+
+import PrivateRoute from "./component/Authntication/PrivateRoute/PrivateRoute";
+import Login from './component/Authntication/Login/Login';
+import Registration from './component/Authntication/Registration/Registration';
 
 
 
@@ -38,18 +40,22 @@ const router = createBrowserRouter([
             <Details></Details>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/brand`),
+        loader: () =>
+          fetch(`https://assingment-10-server-khaki.vercel.app/brand`),
       },
       {
         path: "/detailsCart/:price",
         element: <CartDetails></CartDetails>,
-        loader: () => fetch(`http://localhost:5000/brand`),
+        loader: () =>
+          fetch(`https://assingment-10-server-khaki.vercel.app/brand`),
       },
       {
         path: "/update/:id",
         element: <Update></Update>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/added/${params.id}`),
+          fetch(
+            `https://assingment-10-server-khaki.vercel.app/added/${params.id}`
+          ),
       },
       {
         path: "/add",
@@ -66,7 +72,8 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/added`),
+        loader: () =>
+          fetch(`https://assingment-10-server-khaki.vercel.app/added`),
       },
       {
         path: "/login",
@@ -77,9 +84,9 @@ const router = createBrowserRouter([
         element: <Registration></Registration>,
       },
       {
-        path:"/about",
-        element:<Contact></Contact>
-      }
+        path: "/about",
+        element: <Contact></Contact>,
+      },
     ],
   },
 ]);

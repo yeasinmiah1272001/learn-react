@@ -26,33 +26,34 @@ const Update = () => {
                 };
                 console.log(objInfo);
 
-                fetch(`http://localhost:5000/added/${loadeData._id}`, {
-                  method: "PUT",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    ProductName,
-                    rating,
-                    price,
-                    category,
-                    des,
-                    img,
-                  }),
-                })
+                fetch(
+                  `https://assingment-10-server-khaki.vercel.app/added/${loadeData._id}`,
+                  {
+                    method: "PUT",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      ProductName,
+                      rating,
+                      price,
+                      category,
+                      des,
+                      img,
+                    }),
+                  }
+                )
                   .then((res) => res.json())
                   .then((data) => {
-
-                      if (data.modifiedCount > 0) {
-                        Swal.fire({
-                          position: "top-end",
-                          icon: "success",
-                          title: "Your Product updated",
-                          showConfirmButton: false,
-                          timer: 1500,
-                        });
-                      }
-
+                    if (data.modifiedCount > 0) {
+                      Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your Product updated",
+                        showConfirmButton: false,
+                        timer: 1500,
+                      });
+                    }
 
                     console.log(data);
                   });
