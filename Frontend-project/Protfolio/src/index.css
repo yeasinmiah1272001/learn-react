@@ -1,0 +1,29 @@
+* {
+       background-color: #191a1e
+}
+
+/* body {
+    background-image: url("https://i.ibb.co/tLs5gkN/abstract-gradient-wave-particles-big-600nw-1930623710.webp");
+} */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body {
+       font-family: "Manrope", sans-serif;
+} */
+
+::-webkit-scrollbar {
+       width: 10px;
+}
+
+::-webkit-scrollbar-track {
+       background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+       background: #499bae;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
