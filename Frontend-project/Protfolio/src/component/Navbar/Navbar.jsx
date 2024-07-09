@@ -16,7 +16,7 @@ const Navbar = () => {
             {" "}
             <li>Abouts</li>
           </Link>
-          <Link to="/#workplen">
+          <Link to="#skilla">
             <li>Skills</li>
           </Link>
           <Link>

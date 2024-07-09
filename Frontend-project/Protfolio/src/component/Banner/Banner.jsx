@@ -10,7 +10,7 @@ const Bannar = () => {
     <div className="w-5/6 mx-auto flex justify-center ">
    
       <div className=" md:flex items-center md:justify-between text-[#dddddd] ">
-        <div className="space-y-5 my-20  md:w-1/2 ">
+        <div className="space-y-5 my-20  md:w-1/2 items-center">
           <h1 className=" font-extrabold   tracking-widest	  text-4xl text-[#c4cfde] ">
             {" "}
             Hello👋,
@@ -18,7 +18,7 @@ const Bannar = () => {
               {" "}
               <Typewriter
                 options={{
-                  strings: ["I`m Yeasin Ahmed", "Full Stack Developer"],
+                  strings: ["I`m Yeasin Ahmed", "Frontent Developer"],
                   autoStart: true,
                   loop: true,
                   cursor: " ",
@@ -40,9 +40,7 @@ const Bannar = () => {
               </button>
             </a>
             <div className="space-x-4">
-              <h1 className="my-2 mx-4 font-thin text-[#ff014f]">
-                FIND WITH ME
-              </h1>
+             
               <Link
                 to="https://github.com/yeasinmiah1272001?tab=repositories"
                 target="blank"

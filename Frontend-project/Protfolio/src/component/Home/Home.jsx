@@ -1,4 +1,6 @@
 import Bannar from "../Banner/Banner";
+import Contact from "../Contact/Contact";
+import Footer from "../Footer/Footer";
 import SkillsPrograges from "../SkillsPrograges/SkillsPrograges";
 import Skils from "../Skils/Skils";
 // import What from "../What/What";
@@ -15,6 +17,8 @@ const Home = () => {
                      <Work></Work>
                      <SkillsPrograges></SkillsPrograges>
                      <Protfolio></Protfolio>
+                     <Contact></Contact>
+                     <Footer></Footer>
                      
               </div>
        );

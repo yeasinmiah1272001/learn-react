@@ -1,0 +1,34 @@
+[
+    {
+        "_id": "1",
+        "name": "General",
+        "title": "1 entire server",
+        "price": "$ 1.",
+        "category": "premium"
+    },
+    {
+        "_id": "2",
+        "name": "Lieutenant",
+        "title": "1 entire server",
+        "price": "$ 2.",
+        "category": "premium"
+    },
+
+    {
+        "_id": "5",
+        "name": "Corporal (Custom bot x1)",
+        "title": "3 entire server",
+        "price": "$ 6.",
+        "category": "custom"
+    },
+    {
+        "_id": "6",
+        "name": "Sainik (Custom bot x2)",
+        "title": "5 entire server",
+        "price": "$ 9.",
+        "category": "custom"
+    }
+
+]
+
+

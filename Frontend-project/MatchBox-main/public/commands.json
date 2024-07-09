@@ -1,0 +1,462 @@
+[
+    {
+      "_id": "1",
+      "name": "/addprevious",
+      "title":"Add previous song to the queue",
+      "category": "music"
+  
+      
+    },
+    {
+      "_id": "2",
+      "name": "/autoplay",
+      "title":"Toggle the bot to continuously queue up recommended songs.",
+      "category": "music"
+  
+      
+    },
+    {
+      "_id": "3",
+      "name": "/back",
+      "title":"Skips to the previous song",
+      "category": "music"
+  
+      
+    },
+    {
+      "_id": "4",
+      "name": "/clear",
+      "title": "Clear all tracks from the queue and stop the queue",
+      "category": "music"
+    },
+    {
+      "_id": "5",
+      "name": "/disconnect",
+      "title": "Disconnect from the vc and clears the queue",
+      "category": "music"
+    },
+    {
+      "_id": "6",
+      "name": "/fastforward",
+      "title": "Fast forward the player by your specified amount; The default is 10 seconds",
+      "category": "music"
+    },
+    {
+      "_id": "7",
+      "name": "/join",
+      "title": "Join the vc",
+      "category": "music"
+    },
+    {
+      "_id": "8",
+      "name": "/jump",
+      "title": "Skips to the specified track",
+      "category": "music"
+    },
+    {
+      "_id": "9",
+      "name": "/loop",
+      "title": "Toggles looping the current playing song",
+      "category": "music"
+    },
+    {
+      "_id": "10",
+      "name": "/move",
+      "title": "Move song!",
+      "category": "music"
+    },
+    {
+      "_id": "11",
+      "name": "/pause",
+      "title": "Pauses the player",
+      "category": "music"
+    },
+    {
+      "_id": "12",
+      "name": "/play",
+      "title": "Play a song in ur voice channel",
+      "category": "music"
+    },
+    {
+      "_id": "13",
+      "name": "/playskip",
+      "title": "Plays a song instantly from spotify, which means skips current track and plays next song",
+      "category": "music"
+    },
+    {
+      "_id": "14",
+      "name": "/playtop",
+      "title":"Adds a song with the given name/url on the top of the queue",
+      "category": "music"
+  
+      
+    },
+    {
+      "_id": "15",
+      "name": "/queue",
+      "title": "Displays the current queue of tracks",
+      "category": "music"
+    },
+    {
+      "_id": "16",
+      "name": "/remove",
+      "title": "Remove the specified track from the queue",
+      "category": "music"
+    },
+    {
+      "_id": "17",
+      "name": "/removedupes",
+      "title": "Remove duplicate tracks from the queue",
+      "category": "music"
+    },
+    {
+      "_id": "18",
+      "name": "/replay",
+      "title": "Playing the current song from the beginning",
+      "category": "music"
+    },
+    {
+      "_id": "19",
+      "name": "/rewind",
+      "title": "Rewinds the player by your specified amount; The default is 10 seconds",
+      "category": "music"
+    },
+    {
+      "_id": "20",
+      "name": "/seek",
+      "title":"Skips to the specified timestamp in the currently playing track",
+      "category": "music"
+  
+    },
+    {
+      "_id": "21",
+      "name": "/shuffle",
+      "title": "Randomizes the current order of tracks in the queue",
+      "category": "music"
+    },
+    {
+      "_id": "22",
+      "name": "/skip",
+      "title": "Skips to the next song",
+      "category": "music"
+    },
+    {
+      "_id": "23",
+      "name": "/stop",
+      "title": "Clears the queue and stop the current player",
+      "category": "music"
+    },
+    {
+      "_id": "24",
+      "name": "/resume",
+      "title": "Resume the player",
+      "category": "music"
+    },
+    {
+      "_id": "25",
+      "name": "/8d",
+      "title": "Enables or disables the 8D filter",
+      "category": "filter"
+    },
+    {
+      "_id": "26",
+      "name": "/bassboost",
+      "title": "Enables or disables the BASSBOOST filter",
+      "category": "filter"
+    },
+    {
+      "_id": "27",
+      "name": "/china",
+      "title": "Enables or disables the china filter",
+      "category": "filter"
+    },
+    {
+      "_id": "28",
+      "name": "/chipmunk",
+      "title": "Enables or disables the chipmunk filter",
+      "category": "filter"
+    },
+    {
+      "_id": "29",
+      "name": "/clearfilter",
+      "title": "Clear All filters",
+      "category": "filter"
+    },
+    {
+      "_id": "30",
+      "name": "/darthvader",
+      "title": "Enables or disables the darthvader filter",
+      "category": "filter"
+    },
+    {
+      "_id": "31",
+      "name": "/karaoke",
+      "title": "Enables or disables the karaoke filter",
+      "category": "filter"
+    },
+    {
+      "_id": "32",
+      "name": "/nightcore",
+      "title": "Enables or disables the nightcore filter",
+      "category": "filter"
+    },
+    {
+      "_id": "33",
+      "name": "/party",
+      "title": "Enables or disables the party filter",
+      "category": "filter"
+    },
+    {
+      "_id": "34",
+      "name": "/pitch",
+      "title": "Enables or disables the pitch filter",
+      "category": "filter"
+    },
+    {
+      "_id": "35",
+      "name": "/pop",
+      "title":"Enables or disables the pop filter",
+      "category": "filter"
+  
+      
+    },
+    {
+      "_id": "36",
+      "name": "/rate",
+      "title":"Enables or disables the rate filter",
+      "category": "filter"
+  
+      
+    },
+    {
+      "_id": "37",
+      "name": "/slowmo",
+      "title":"Enables or disables the slowmo filter",
+      "category": "filter"
+  
+      
+    },
+    {
+      "_id": "38",
+      "name": "/soft",
+      "title":"/softEnables or disables the soft filter",
+      "category": "filter"
+  
+      
+    },
+    {
+      "_id": "39",
+      "name": "/speed",
+      "title":"/speed Enables or disables the speed filter",
+      "category": "filter"
+  
+      
+    },
+    {
+      "_id": "40",
+      "name": "/tremolo",
+      "title":"Enables or disables the tremolo filter",
+      "category": "filter"
+  
+      
+    },
+    {
+      "_id": "41",
+      "name": "/vaporwave",
+      "title":"Enables or disables the vaporwave filter",
+      "category": "filter"
+  
+      
+    },
+    {
+      "_id": "42",
+      "name": "/vibrato",
+      "title":"Enables or disables the vibrato filter",
+      "category": "filter"
+  
+      
+    },
+    {
+      "_id": "43",
+      "name": "/botinfo",
+      "title":"To know about me",
+      "category": "utility"
+  
+      
+    },
+    {
+      "_id": "44",
+      "name": "/help",
+      "title": "To show all commands",
+      "category": "utility"
+    },
+    {
+      "_id": "45",
+      "name": "/invite",
+      "title": "Invite me to ur server!",
+      "category": "utility"
+    },
+    {
+      "_id": "46",
+      "name": "/ping",
+      "title": "Pong!",
+      "category": "utility"
+    },
+    {
+      "_id": "47",
+      "name": "/settings",
+      "title": "Bot settings!",
+      "category": "utility"
+    },
+    {
+      "_id": "48",
+      "name": "/24h",
+      "title": "Enable or disable 24/7 mode!",
+      "category": "admin"
+    },
+    {
+      "_id": "49",
+      "name": "/setprefix",
+      "title": "Change prefix for the bot",
+      "category": "admin"
+    },
+    {
+      "_id": "50",
+      "name": "/setchannel",
+      "title": "Set specific text channels for bot commands!",
+      "category": "admin"
+    },
+    {
+      "_id": "51",
+      "name": "/setdj",
+      "title": "Add or remove dj role",
+      "category": "admin"
+    },
+    {
+      "_id": "52",
+      "name": "/setdjonly",
+      "title": "Set's a Command to the DJ Only State or non DJ Only State",
+      "category": "admin"
+    },
+    {
+      "_id": "53",
+      "name": "/setup",
+      "title": "Setup a request channel!",
+      "category": "admin"
+    },
+    {
+      "_id": "54",
+      "name": "/setvc",
+      "title": "Set specific voice channels for matchBox!",
+      "category": "admin"
+    },
+    {
+      "_id": "55",
+      "name": "/togglemessage",
+      "title": "The bot will take commands from only setup channel!",
+      "category": "admin"
+    },
+    {
+      "_id": "56",
+      "name": "/premium addserver",
+      "title": "Add your server as a premium server!",
+      "category": "premium"
+    },
+    {
+      "_id": "57",
+      "name": "/premium removeserver",
+      "title": "Remove your server as a premium server!",
+      "category": "premium"
+    },
+    {
+      "_id": "58",
+      "name": "/premium bots",
+      "title": "Get your premium bots invite link!",
+      "category": "premium"
+    },
+    {
+      "_id": "59",
+      "name": "/premium serverlist",
+      "title": "List of your premium servers!",
+      "category": "premium"
+    },
+    {
+      "_id": "60",
+      "name": "/playlist create",
+      "title": "Create your custom playlist",
+      "category": "playlist"
+    },
+    {
+      "_id": "61",
+      "name": "/playlist addtrack",
+      "title": "Add current playing track to ur playlist",
+      "category": "playlist"
+    },
+    {
+      "_id": "62",
+      "name": "/playlist share",
+      "title": "Share your playlist to ur friends!",
+      "category": "playlist"
+    },
+    {
+      "_id": "63",
+      "name": "/playlist editname",
+      "title": "Enables or disables the nightcore filter",
+      "category": "playlist"
+    },
+    {
+      "_id": "64",
+      "name": "/playlist move",
+      "title": "Move your tracks in your custom playlist!",
+      "category": "playlist"
+    },
+    {
+      "_id": "65",
+      "name": "/playlist addqueue",
+      "title": "Add current queue to ur playlist!",
+      "category": "playlist"
+    },
+    {
+      "_id": "66",
+      "name": "/playlist add",
+      "title": "Add a song to your playlist!",
+      "category": "playlist"
+    },
+    {
+      "_id": "67",
+      "name": "/playlist delete",
+      "title": "Delete your custom playlist!",
+      "category": "playlist"
+    },
+    {
+      "_id": "68",
+      "name": "/playlist play",
+      "title": "Play songs from your custom playlist!",
+      "category": "playlist"
+    },
+    {
+      "_id": "69",
+      "name": "/playlist remove",
+      "title": "Remove songs from your custom playlist!",
+      "category": "playlist"
+    },
+    {
+      "_id": "70",
+      "name": "/playlist removedupes",
+      "title": "Remove duplicate songs from your custom playlist!",
+      "category": "playlist"
+    },
+    {
+      "_id": "71",
+      "name": "/playlist show",
+      "title": "Show all of your custom playlist!",
+      "category": "playlist"
+    },
+    {
+      "_id": "72",
+      "name": "/playlist details",
+      "title": "Show details about your custom playlist!",
+      "category": "playlist"
+    }
+    
+  ]
