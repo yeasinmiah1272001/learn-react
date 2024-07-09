@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import yeasin from "../../assets/yeasin.jpg"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import resume from "../../assets/resume.pdf"
+// import resume from "../../assets/protfolio/resume.pdf"
 
 import Typewriter from "typewriter-effect";
 
 const Bannar = () => {
   return (
     <div className="w-5/6 mx-auto flex justify-center ">
-   
       <div className=" md:flex items-center md:justify-between text-[#dddddd] ">
         <div className="space-y-5 my-20  md:w-1/2 items-center">
           <h1 className=" font-extrabold   tracking-widest	  text-4xl text-[#c4cfde] ">
@@ -34,13 +33,15 @@ const Bannar = () => {
             solutions that connect billions of people
           </p>
           <div className="flex sm:flex-row  items-center gap-5">
-            <a href={resume} download={resume}>
-              <button  className=" my-3 px-8 hover:bg-[#8954f7] text-[#8954f7] hover:text-white duration-500 py-2 text-xl rounded-3xl border border-[#8954f7]">
+            <a
+              href="https://i.ibb.co/QvpvF0R/resume.jpg"
+              download="https://i.ibb.co/QvpvF0R/resume.jpg"
+            >
+              <button className=" my-3 px-8 hover:bg-[#8954f7] text-[#8954f7] hover:text-white duration-500 py-2 text-xl rounded-3xl border border-[#8954f7]">
                 Download CV
               </button>
             </a>
             <div className="space-x-4">
-             
               <Link
                 to="https://github.com/yeasinmiah1272001?tab=repositories"
                 target="blank"

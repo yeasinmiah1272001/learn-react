@@ -12,18 +12,18 @@ const Navbar = () => {
             {" "}
             <li>Home</li>
           </Link>
-          <Link>
+          <Link to="/banner">
             {" "}
             <li>Abouts</li>
           </Link>
-          <Link to="#skilla">
+          <Link to="/skill">
             <li>Skills</li>
           </Link>
-          <Link>
+          <Link to="/protfolio">
             {" "}
             <li>Projects</li>
           </Link>
-          <Link>
+          <Link to="/contact">
             {" "}
             <li>Contact</li>
           </Link>
